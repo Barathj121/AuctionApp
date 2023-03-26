@@ -1,0 +1,12 @@
+{
+  "functions": {
+    "targets": [
+      "ALienCityAio"
+    ],
+    "ignore": [],
+    "source": "functions"
+  },
+  "client": {
+    "source": "client"
+  }
+}

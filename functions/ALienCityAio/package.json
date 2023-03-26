@@ -1,0 +1,9 @@
+{
+	"name": "aliencityaio",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "barathkumarj001@gmail.com",
+	"dependencies": {
+		"zcatalyst-sdk-node": "latest"
+	}
+}

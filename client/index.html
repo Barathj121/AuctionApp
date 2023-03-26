@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AuctionApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="nav" style="background: #000;height:80px;align-items: center;justify-content: center;">
+        <h1 style="color: beige;">AUCTION</h1>
+    </div>
+    <div class="container" style="margin-right: 150px;margin-top: 100px;">
+        <div class="left" style="margin-left: -450px">
+            <h3>Player Details</h3>
+            <br>
+            <table style="margin-left:30px">
+                <tr>
+                    <th style="position: absolute;margin-left: -50px;">Player</th>
+                    <th style="position: absolute;margin-left: 100px;">Base Price</th>
+                </tr>
+                <tr style="position: absolute;margin-top: 50px;">
+                    <td style="position: absolute;margin-left: -50px;">Dhoni</td>
+                    <td style="position: absolute;margin-left: 100px;">70000000</td>
+                </tr>
+                <tr style="position: absolute;margin-top: 100px;">
+                    <td style="position: absolute;margin-left: -50px;">Kholi</td>
+                    <td style="position: absolute;margin-left: 100px;">90000000</td>
+                </tr>
+                <tr style="position: absolute;margin-top: 150px;">
+                    <td style="position: absolute;margin-left: -50px;">Rohit</td>
+                    <td style="position: absolute;margin-left: 100px;">45000000</td>
+                </tr>
+                <tr style="position: absolute;margin-top: 200px;">
+                    <td style="position: absolute;margin-left: -50px;">ABD</td>
+                    <td style="position: absolute;margin-left: 100px;">50000000</td>
+                </tr>
+                <tr style="position: absolute;margin-top: 250px;">
+                    <td style="position: absolute;margin-left: -50px;">Raina</td>
+                    <td style="position: absolute;margin-left: 100px;">40000000</td>
+                </tr>
+            </table>
+        </div>
+        <div class="l" style="width: 2px;height: 500px;background: #000;position: absolute;margin-left: -40px;"></div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="check-tab" data-toggle="tab" href="#check" role="tab"
+                    aria-controls="check" aria-selected="true">Enter Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="report-tab" data-toggle="tab" href="#report" role="tab" aria-controls="report"
+                    aria-selected="false">View Details</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="check" role="tabpanel" aria-labelledby="check-tab">
+                <br>
+                <br>
+                <form>
+                    <div class="form-group">
+                        <div class="city-post-input">
+                            <label for="exampleInputEmail1"><b>Enter Player Name :</b></label>
+                            <input type="text" class="form-control" id="Player-post-input" aria-describedby="cityPost"
+                                placeholder="Enter Player Name">
+                                <br>
+                            <label for="exampleInputEmail1"><b>Enter Team Name :</b></label>
+                            <input type="text" class="form-control" id="Team-post-input" aria-describedby="cityPost"
+                                placeholder="Enter Team Name">
+                                <br>
+                            <label for="exampleInputEmail1"><b>Enter Bid Amount :</b></label>
+                            <input type="text" class="form-control" id="bidamount-post-input" aria-describedby="cityPost"
+                                placeholder="Enter Bid Amount">
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary"
+                        onclick="postAlienEncounter();return false;" style="letter-spacing: 2px;">Enter</button>
+                </form>
+                <br>
+                <br>
+                <div id="result-container">
+                    <div id="result-text">
+                    </div>
+                    <br>
+                    <div id="result-image">
+                    </div>
+                </div>
+                <div id="loader" style="display: none;">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+            </div>
+            <div class="tab-pane fade" id="report" role="tabpanel" aria-labelledby="report-tab">
+                <br>
+                <br>
+                <form onsubmit="getAlienEncounter();return false;">
+                    <div class="form-group">
+                        <div class="city-post-input">
+                            <label for="exampleInputEmail1"><b>Enter the player's name for highest bid: </b></label>
+                            <input type="text" class="form-control" id="playerview" aria-describedby="cityPost"
+                                placeholder="Enter Player Name">
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary"
+                        />
+                </form>
+                <br>
+                <br>
+                <div>
+                    <p id="result"></p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

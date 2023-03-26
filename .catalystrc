@@ -1,0 +1,66 @@
+{
+  "defaults": {
+    "project": 3,
+    "env": 1
+  },
+  "actives": {
+    "project": 3,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "544000000003094",
+      "name": "demo",
+      "domain": {
+        "id": "8001348787",
+        "name": "demo-7003015964.development"
+      },
+      "timezone": "Australia/Sydney",
+      "env": [
+        {
+          "idx": 1,
+          "id": "7003015964",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    },
+    {
+      "idx": 2,
+      "id": "544000000003908",
+      "name": "auction",
+      "domain": {
+        "id": "8001349015",
+        "name": "auction-7003015964.development"
+      },
+      "timezone": "Australia/Sydney",
+      "env": [
+        {
+          "idx": 1,
+          "id": "7003015964",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    },
+    {
+      "idx": 3,
+      "id": "544000000003014",
+      "name": "AuctionWebsite",
+      "domain": {
+        "id": "8001348542",
+        "name": "auctionwebsite-7003015964.development"
+      },
+      "timezone": "Australia/Sydney",
+      "env": [
+        {
+          "idx": 1,
+          "id": "7003015964",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    }
+  ]
+}
